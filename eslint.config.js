@@ -15,6 +15,7 @@ export default [
           jsx: true,
         },
         project: ['./tsconfig.json'],
+        projectFolderIgnoreList: ['node_modules', 'dist', 'build', 'coverage'],
       },
     },
     settings: {
