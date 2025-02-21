@@ -1,9 +1,9 @@
-import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import prettierConfig from 'eslint-config-prettier';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
-import prettierConfig from 'eslint-config-prettier';
 
 export default [
   {

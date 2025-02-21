@@ -3,11 +3,21 @@
   "version": "1.0.0",
   "description": "CageEye's ESLint config for React and TypeScript projects",
   "type": "module",
-  "main": "index.js",
+  "main": "eslint.config.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/CageEye/eslint-config-cageeye.git"
   },
+  "homepage": "https://github.com/CageEye/eslint-config-cageeye#readme",
+  "bugs": {
+    "url": "https://github.com/CageEye/eslint-config-cageeye/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "eslint.config.js"
+  ],
   "keywords": [
     "eslint",
     "eslintconfig",
