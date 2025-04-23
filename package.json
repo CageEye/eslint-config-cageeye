@@ -53,6 +53,6 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint . --debug"
   }
 }
