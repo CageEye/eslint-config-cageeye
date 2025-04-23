@@ -44,5 +44,7 @@ export default defineConfig([
   globalIgnores([
     "dist/*",
     "node_modules/*",
+    ".next/*",
+    "public/*",
   ]),
 ]);
