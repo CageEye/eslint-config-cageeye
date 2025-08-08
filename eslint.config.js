@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import stylistic from "@stylistic/eslint-plugin";
 import { defineConfig, globalIgnores } from "eslint/config";
 import pluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -10,12 +11,24 @@ export default defineConfig([
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"] },
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], languageOptions: { globals: globals.browser } },
   tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: {
+      react: pluginReact,
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+    ...pluginReact.configs.flat.recommended,
+  },
   reactRefresh.configs.recommended,
   {
     plugins: {
       "simple-import-sort": simpleImportSort,
       "react-hooks": reactHooks,
+      "@stylistic": stylistic,
     },
     rules: {
       'react/react-in-jsx-scope': 'off',
@@ -24,21 +37,20 @@ export default defineConfig([
       'prefer-destructuring': ['error', { object: true, array: false }],
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
-      'indent': ['error', 2, { 'SwitchCase': 1 }],
-      'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 1 }],
-      'no-trailing-spaces': 'error',
-      'eol-last': 'error',
-      'object-curly-spacing': ['error', 'always'],
-      'array-bracket-spacing': ['error', 'never'],
-      'comma-spacing': ['error', { 'before': false, 'after': true }],
-      'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
-      'keyword-spacing': ['error', { 'before': true, 'after': true }],
-      'arrow-spacing': ['error', { 'before': true, 'after': true }],
-      'space-infix-ops': 'error',
-      'semi': ['error', 'always'],
-      'semi-spacing': ['error', { 'before': false, 'after': true }],
-      'space-before-blocks': 'error',
-      'space-before-function-paren': ['error', { 'anonymous': 'always', 'named': 'never', 'asyncArrow': 'always' }],
+      '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
+      '@stylistic/no-trailing-spaces': 'error',
+      '@stylistic/eol-last': 'error',
+      '@stylistic/object-curly-spacing': ['error', 'always'],
+      '@stylistic/array-bracket-spacing': ['error', 'never'],
+      '@stylistic/comma-spacing': ['error', { before: false, after: true }],
+      '@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true }],
+      '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
+      '@stylistic/arrow-spacing': ['error', { before: true, after: true }],
+      '@stylistic/space-infix-ops': 'error',
+      '@stylistic/semi': ['error', 'always'],
+      '@stylistic/semi-spacing': ['error', { before: false, after: true }],
+      '@stylistic/space-before-blocks': 'error',
+      '@stylistic/space-before-function-paren': ['error', { anonymous: 'always', named: 'never', asyncArrow: 'always' }],
     },
   },
   globalIgnores([
