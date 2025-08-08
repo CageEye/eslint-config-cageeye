@@ -13,7 +13,7 @@ export default defineConfig([
   tseslint.configs.recommended,
   // ESLint Stylistic flat recommended preset (enables core + JSX stylistic rules)
   // 1) Base stylistic rules (includes JSX set when enabled later)
-  stylistic.configs['recommended-flat'],
+  stylistic.configs['recommended'],
 
   // 2) Your style overlay (keeps config DRY across projects)
   stylistic.configs.customize({
