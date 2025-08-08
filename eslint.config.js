@@ -1,12 +1,12 @@
-import js from '@eslint/js'
-import stylistic from '@stylistic/eslint-plugin'
-import { defineConfig, globalIgnores } from 'eslint/config'
-import pluginReact from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import simpleImportSort from 'eslint-plugin-simple-import-sort'
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
+import js from '@eslint/js';
+import stylistic from '@stylistic/eslint-plugin';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import pluginReact from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 export default defineConfig([
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'], plugins: { js }, extends: ['js/recommended'] },
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'], languageOptions: { globals: globals.browser } },
@@ -17,10 +17,10 @@ export default defineConfig([
 
   // 2) Your style overlay (keeps config DRY across projects)
   stylistic.configs.customize({
-    jsx: true,          // enable JSX-focused stylistic rules
-    quotes: 'single',   // align with your codebase
-    semi: true,        // no semicolons
-    indent: 2,       // optional; we disable the rule below due to recursion bug
+    jsx: true, // enable JSX-focused stylistic rules
+    quotes: 'single', // align with your codebase
+    semi: true, // no semicolons
+    indent: 2, // optional; we disable the rule below due to recursion bug
     // further options if desired: commaDangle, arrowParens, braceStyle, etc.
   }),
   {
@@ -43,6 +43,7 @@ export default defineConfig([
       '@stylistic': stylistic,
     },
     rules: {
+      '@stylistic/indent': 'off',
       'react/react-in-jsx-scope': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
@@ -57,4 +58,4 @@ export default defineConfig([
     '.next/*',
     'public/*',
   ]),
-])
+]);
