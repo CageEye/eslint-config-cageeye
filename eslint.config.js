@@ -12,7 +12,17 @@ export default defineConfig([
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'], languageOptions: { globals: globals.browser } },
   tseslint.configs.recommended,
   // ESLint Stylistic flat recommended preset (enables core + JSX stylistic rules)
+  // 1) Base stylistic rules (includes JSX set when enabled later)
   stylistic.configs['recommended-flat'],
+
+  // 2) Your style overlay (keeps config DRY across projects)
+  stylistic.configs.customize({
+    jsx: true,          // enable JSX-focused stylistic rules
+    quotes: 'single',   // align with your codebase
+    semi: true,        // no semicolons
+    indent: 2,       // optional; we disable the rule below due to recursion bug
+    // further options if desired: commaDangle, arrowParens, braceStyle, etc.
+  }),
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     plugins: {
