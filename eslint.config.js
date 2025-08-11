@@ -44,6 +44,15 @@ export default defineConfig([
     },
     rules: {
       '@stylistic/indent': 'off',
+      '@stylistic/max-len': ['error', {
+        code: 120,
+        tabWidth: 2,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreComments: true,
+        ignoreUrls: true,
+      }],
+      'react/jsx-max-props-per-line': ['error', { maximum: 1 }],
       'react/react-in-jsx-scope': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
