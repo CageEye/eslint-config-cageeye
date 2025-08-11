@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-cageeye",
-  "version": "5.6.0",
+  "version": "5.6.1",
   "description": "CageEye's ESLint config for React and TypeScript projects",
   "type": "module",
   "main": "eslint.config.js",
